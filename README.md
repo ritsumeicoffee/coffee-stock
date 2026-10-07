@@ -18,3 +18,5 @@
 * **Database**: Supabase (PostgreSQL)
 * **Deployment**: GitHub Pages
 * **Integration**: Discord Webhook API (with CORS Proxy)
+
+made by - KIM
