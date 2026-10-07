@@ -1,22 +1,35 @@
-# 📦 Coffee Stock (RCS 在庫管理)
+# 📦 Coffee Stock（RCS 在庫管理）
 
-モバイル環境および屋外での出店に最適化された、サークル用在庫管理システムです。
+立命館珈琲研究会（RCS）の在庫管理アプリです。スマホで在庫を増減でき、不足時は Discord に通知します。
 
-## ✨ Features
+## ✨ 機能
+- ＋／－ボタンでの在庫入力（スマホ向け）
+- お気に入り・最近使った項目の上部表示
+- ひらがな／カタカナ区別なしの検索
+- 複数項目の一括保存
+- Discord 通知
+- 変更履歴の表示と CSV 出力（直近30件）
 
-* **モバイル最適化UX**: 直感的なハプティクス（振動）付きステッパー（＋/－）とトースト通知
-* **クイックアクセス**: お気に入り（★）および最近更新した項目を最上部に自動配置
-* **スマート検索**: ひらがな・カタカナの自動互換検索、およびカテゴリによるフィルタリング
-* **一括処理**: 変更された複数の項目をワンクリックで一括保存
-* **リアルタイム通知**: 在庫の変更や不足状況をDiscord Webhookで即時送信
-* **データバックアップ**: 現在の在庫および変更履歴をCSVファイルとしてエクスポート
-* **データバックアップ**: サーバーはsupa baseを使いました。
+## 🛠 構成
+- HTML / CSS / Vanilla JavaScript
+- Supabase（データベース）
+- GitHub Pages（公開）
+- Discord 通知（Cloudflare Workers 経由）
 
-## 🛠 Tech Stack
+## ⚙️ 設定
+`js/config.js` に Supabase の URL と公開キー、Discord 中継先、アクセスコードを設定します。
+- `service_role` キーは書かないでください。
+- このリポジトリは公開されているため、設定値は外部から見えるものとして扱ってください。
+- Supabase で **RLS を必ず有効にしてください**。
 
-* **Frontend**: HTML5, CSS3, Vanilla JavaScript
-* **Database**: Supabase (PostgreSQL)
-* **Deployment**: GitHub Pages
-* **Integration**: Discord Webhook API (with CORS Proxy)
+## 🗄 テーブル
+- `inventory`：id, category, item_name, current_stock, min_stock, unit
+- `inventory_logs`：id, created_at, item_name, before_qty, after_qty, diff_qty, note
 
-made by - KIM
+## 🔧 引き継ぎ
+- 無料プランの Supabase は7日間アクセスがないと一時停止します。
+- Supabase のアカウントはサークル用アカウントで管理しています。
+- テスト時は Discord 通知をオフにしてください。
+
+## 👤 Author
+Hyeonsik Kim（ヒョンシク）
