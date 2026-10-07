@@ -1,6 +1,7 @@
 # 📦 Coffee Stock（RCS 在庫管理）
 
 立命館珈琲研究会（RCS）の在庫管理アプリです。スマホで在庫を増減でき、不足時は Discord に通知します。
+🔗 アプリ: https://ritsumeicoffee.github.io/coffee-stock/
 
 ## ✨ 機能
 - ＋／－ボタンでの在庫入力（スマホ向け）
